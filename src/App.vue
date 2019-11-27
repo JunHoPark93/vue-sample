@@ -1,55 +1,34 @@
-<template>
-  <div id="app">
-    <Todos v-bind:todos="todos" v-on:del-todo="deleteTodo"/>
+<template> 
+  <div>
+    <Header/>
+    <div class="wrap">
+      <Menu/>
+      <Content/>
+    </div>
   </div>
 </template>
 
-<script>
-import Todos from './components/Todos';
+<script>  
+import Content from "./components/Content";
+import Menu from "./components/Menu";
+import Header from "./components/Header";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    Todos
-  },
-  data() {
-    return {
-      todos: [
-        {
-          id: 1,
-          title: "Todo One",
-          completed: true
-        },
-        {
-          id: 2,
-          title: "Todo Two",
-          completed: true
-        },
-        {
-          id: 3,
-          title: "Todo Three",
-          completed: false
-        }
-      ]
-    }
-  },
-  methods: {
-    deleteTodo(id) {
-      this.todos = this.todos.filter(todo => todo.id !== id);
-    }
+    Content,
+    Menu,
+    Header
   }
-}
+};
 </script>
 
-<style>
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+<style>   
+  h1 {
+    color: #03a9f4;
   }
 
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.4;
+  .wrap {
+    display: flex
   }
 </style>
