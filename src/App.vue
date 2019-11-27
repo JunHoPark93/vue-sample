@@ -5,6 +5,12 @@
       <Menu/>
       <Content/>
     </div>
+    <Box color="blue"/>
+    <Box color="purple"/>
+    <Box color="green"/>
+    <Box color="blue"/>
+    <Box color="purple"/>
+    <Box />
   </div>
 </template>
 
@@ -12,13 +18,15 @@
 import Content from "./components/Content";
 import Menu from "./components/Menu";
 import Header from "./components/Header";
+import Box from "./components/Box";
 
 export default {
   name: "app",
   components: {
     Content,
     Menu,
-    Header
+    Header,
+    Box
   }
 };
 </script>
